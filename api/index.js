@@ -2,6 +2,8 @@ import express from "express"
 import dotenv from "dotenv"
 import mongoose from "mongoose"
 import authRoute from "./routes/auth.js"
+import servicesRoute from "./routes/services.js"
+import usersRoute from "./routes/users.js"
 
 const app = express()
 
@@ -21,7 +23,9 @@ mongoose.connection.on("disconnected", () => {
 })
 
 //MIDDLEWARES
-app.use("/auth", authRoute)
+app.use("/api/auth", authRoute)
+app.use("/api/services", servicesRoute)
+app.use("/api/users", usersRoute)
 
 
 
