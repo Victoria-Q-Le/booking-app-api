@@ -7,5 +7,8 @@ const ServiceSchema = new mongoose.Schema({
     type: { type: String, required: true },
     description: { type: String, required: true },
     price: { type: Number, required: true },
-    tech: {type: String, required: false}
+    tech: {type: String},
+    discount: {type: Boolean, default: false}
 })
+
+export default mongoose.model("Service", ServiceSchema)
