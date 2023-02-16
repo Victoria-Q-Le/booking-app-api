@@ -1,29 +1,14 @@
 import express from "express"
+import { createService, updateService } from "../controllers/service.js"
 import Service from "../models/Service.js"
-import { createError } from "../utils/error.js"
 
 const router = express.Router()
 
 //CREATE
-router.post("/", async (req,res) => {
-    const newService = new Service(req.body)
-    try {
-        const savedService = await newService.save()
-        res.status(200).json(savedService)
-    } catch (error) {
-        res.status(500).json(error)
-    }
-})
+router.post("/", createService)
 
 //UPDATE
-router.put("/:id", async (req,res) => {
-    try {
-        const updatedService = await Service.findByIdAndUpdate(req.params.id, {$set: req.body}, {new: true} )
-        res.status(200).json(updatedService)
-    } catch (error) {
-        res.status(500).json(error)
-    }
-})
+router.put("/:id", updateService)
 
 //DELETE
 router.delete("/:id", async (req,res) => {
@@ -47,8 +32,6 @@ router.get("/:id", async (req,res) => {
 
 //GET ALL
 router.get("/", async(req,res, next) => {
-    const failed = true
-    if (failed) return next(createError(401, "you are not authenticated"))
     try {
         const services = await Service.find()
         res.status(200).json(services)
