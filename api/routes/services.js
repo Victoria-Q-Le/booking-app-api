@@ -44,4 +44,14 @@ router.get("/:id", async (req,res) => {
     }
 })
 
+//GET ALL
+router.get("/", async(req,res) => {
+    try {
+        const services = await Service.find()
+        res.status(200).json(services)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+})
+
 export default router
