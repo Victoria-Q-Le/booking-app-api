@@ -18,3 +18,30 @@ export const updateService = async (req, res, next) => {
         next(error)
     }
 }
+
+export const deleteService = async (req, res, next) => {
+    try {
+        await Service.findByIdAndDelete(req.params.id)
+        res.status(200).json("Service has been deleted")
+    } catch (error) {
+        next(error)
+    }
+}
+
+export const getService = async (req, res, next) => {
+    try {
+        const service = await Service.findById(req.params.id)
+        res.status(200).json(service)
+    } catch (error) {
+        next(error)
+    }
+}
+
+export const getServices = async (req, res, next) => {
+    try {
+        const services = Service.find()
+        res.status(200).json(services)
+    } catch (error) {
+        next(error)
+    }
+}   
