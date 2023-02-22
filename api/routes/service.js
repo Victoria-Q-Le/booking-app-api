@@ -25,4 +25,14 @@ router.put("/:id", async (req,res) => {
     }
 })
 
+//DELETE
+router.delete("/:id", async(req,res) => {
+    try {
+        await Service.findByIdAndDelete(req.params.id)
+        res.status(200).json("Service has been deleted!")
+    } catch (error) {
+        res.status(500).json(error)
+    }
+})
+
 export default router
