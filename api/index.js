@@ -24,6 +24,9 @@ mongoose.connection.on("disconnected", () => {
 })
 
 ///////MIDDLEWARE/////////////
+app.use(express.json()) //by default, we cant send json to express server => this middleware is used to prevent this error
+
+
 app.use("/api/auth", authRoute)
 app.use("/api/user", userRoute)
 app.use("/api/service", serviceRoute)
