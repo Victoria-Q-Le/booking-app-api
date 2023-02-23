@@ -32,6 +32,12 @@ app.use("/api/user", userRoute)
 app.use("/api/service", serviceRoute)
 app.use("/api/tech", techRoute)
 
+app.use((err, req,res,next) => {
+   const errorStatus = err.errorStatus || 500
+   const errorMessage = err.message || "Something went wrong"
+   return res.status(errorStatus.json({success: false, status: errorStatus, message: errorMessage, stack: err.stack}))
+})
+
 ////////////CONNECTION//////////
 app.listen(8800, () => {
     connect()
