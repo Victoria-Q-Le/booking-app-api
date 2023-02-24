@@ -11,7 +11,7 @@ router.post("/:serviceid",verifyAdmin, createTech)
 router.put("/:id", verifyAdmin, updateTech)
 
 //DELETE
-router.delete("/:id", verifyAdmin, deleteTech)
+router.delete("/:id/:serviceid", verifyAdmin, deleteTech)
 
 //GET
 router.get("/:id", getTech)

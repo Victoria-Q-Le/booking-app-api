@@ -28,8 +28,14 @@ export const updateTech = async (req,res,next) => {
 }
 
 export const deleteTech = async (req,res,next) => {
+    const serviceid = req.params.serviceid
     try {
         await Tech.findByIdAndDelete(req.params.id)
+        try {
+            await Service.findByIdAndUpdate(serviceid, {$pull: {techs: req.params.id}})
+        } catch (error) {
+            next(error)
+        }
         res.status(200).json("Tech has been deleted!")
     } catch (error) {
         next(error)
