@@ -28,7 +28,9 @@ export const login = async (req,res,next) => {
         const isPasswordCorrect = await bcrypt.compare(req.body.password, user.password) //comparing the password with the hash - 400 bad request 
         if (!isPasswordCorrect) return next(createError(400, "Please double check your username and password!"))
 
-        res.status(200).json(user)
+        const {password, isAdmin, ...otherDetails} = user._doc  //deconstruct return user, because didnt want to show all details on client side, also user object is saved under _doc 
+
+        res.status(200).json({...otherDetails})
     } catch (error) {
         next(error)
     }
