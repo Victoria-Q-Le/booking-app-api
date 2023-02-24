@@ -2,7 +2,9 @@ import mongoose from "mongoose"
 
 const TechSchema = new mongoose.Schema({
     name: {type: String, required: true, unique: true},
-    workdays: [{number: Number, unvailableDates: {type: [Date]}}]
-})
+    workDays: [{day: String, unavailableDates: {type: [Date]}}],
+},
+    {timestamps: true}
+)
 
 export default mongoose.model("Tech", TechSchema)
