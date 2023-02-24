@@ -1,6 +1,7 @@
 import express from "express"
 import dotenv from "dotenv"
 import mongoose from "mongoose"
+import cookieParser from "cookie-parser"
 import authRoute from "./routes/auth.js"
 import userRoute from "./routes/user.js"
 import serviceRoute from "./routes/service.js"
@@ -24,6 +25,8 @@ mongoose.connection.on("disconnected", () => {
 })
 
 ///////MIDDLEWARE/////////////
+app.use(cookieParser())
+
 app.use(express.json()) //by default, we cant send json to express server => this middleware is used to prevent this error
 
 
