@@ -1,5 +1,6 @@
 import User from "../models/User.js"
 import bcrypt from "bcryptjs"
+import {createError} from "../utils/error.js";
 
 
 export const register = async (req,res,next) => {
@@ -14,6 +15,20 @@ export const register = async (req,res,next) => {
         })
         await  newUser.save()
         res.status(200).send("User has been created")
+    } catch (error) {
+        next(error)
+    }
+}
+
+export const login = async (req,res,next) => {
+    try {
+        const user = await User.findOne({username: req.body.username})
+        if (!user) return next(createError(404, "User not found!")) //check wether the user is in db 
+
+        const isPasswordCorrect = await bcrypt.compare(req.body.password, user.password) //comparing the password with the hash - 400 bad request 
+        if (!isPasswordCorrect) return next(createError(400, "Please double check your username and password!"))
+
+        res.status(200).json(user)
     } catch (error) {
         next(error)
     }
