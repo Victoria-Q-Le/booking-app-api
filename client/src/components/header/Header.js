@@ -1,5 +1,5 @@
 import "./header.css"
-import {faEye, faFaceSmile, faSprayCanSparkles} from "@fortawesome/free-solid-svg-icons"
+import {faCalendar, faClock, faEye, faFaceSmile, faSprayCanSparkles} from "@fortawesome/free-solid-svg-icons"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 
 const Header = () => {
@@ -30,7 +30,23 @@ const Header = () => {
         <button className="headerBtn">Login/Register</button>
 
         {/* SEARCH BOX */}
-        <div className="headerSearch"></div>
+        <div className="headerSearch">
+          <div className="headerSearchItem">
+            <FontAwesomeIcon icon={faSprayCanSparkles} className="headerIcon" />
+            <input type="text" placeholder="Please enter your service" className="headerSearchInput"></input>
+          </div>
+
+          <div className="headerSearchItem">
+            <FontAwesomeIcon icon={faCalendar} className="headerIcon" />
+            <span className="headerSearchText">Date</span>
+          </div>
+          
+          <div className="headerSearchItem">
+            <FontAwesomeIcon icon={faClock} className="headerIcon" />
+            <span className="headerSearchText">Time</span>
+          </div>
+        </div>
+        
       </div>
     </div>
   )
