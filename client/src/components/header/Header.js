@@ -2,8 +2,11 @@ import "./header.css"
 import {faCalendar, faClock, faEye, faFaceSmile, faSprayCanSparkles} from "@fortawesome/free-solid-svg-icons"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import { useState } from "react"
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Header = () => {
+  const [date, setDate] = useState(new Date())
 
   return (
     <div className="header">
@@ -40,7 +43,8 @@ const Header = () => {
 
           <div className="headerSearchItem">
             <FontAwesomeIcon icon={faCalendar} className="headerIcon" />
-            <span className="headerSearchText">Date</span>
+            <DatePicker className="date" selected={date} onChange={(date) => setDate(date)} closeOnScroll={true}/>
+
           </div>
           
           <div className="headerSearchItem">
