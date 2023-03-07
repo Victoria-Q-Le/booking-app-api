@@ -27,13 +27,13 @@ const Header = () => {
         {/* TITLE */}
         <h1 className="headerTitle">Want to get pampered? Come visit us!</h1>
         <p className="headerDesc">Come to us with all your beauty needs, from taking care of your nails, to lashes, or just simply a facial to refresh to skin</p>
-        <button className="headerBtn">Login/Register</button>
+        <button className="headerBtn">Login / Register</button>
 
         {/* SEARCH BOX */}
         <div className="headerSearch">
           <div className="headerSearchItem">
             <FontAwesomeIcon icon={faSprayCanSparkles} className="headerIcon" />
-            <input type="text" placeholder="Please enter your service" className="headerSearchInput"></input>
+            <input type="text" placeholder="Find by service" className="headerSearchInput"></input>
           </div>
 
           <div className="headerSearchItem">
@@ -45,8 +45,12 @@ const Header = () => {
             <FontAwesomeIcon icon={faClock} className="headerIcon" />
             <span className="headerSearchText">Time</span>
           </div>
+
+          <div className="headerSearchItem">
+            <button className="headerBtn">Search</button>
+          </div>
         </div>
-        
+
       </div>
     </div>
   )
