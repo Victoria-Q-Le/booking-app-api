@@ -1,8 +1,16 @@
 import "./header.css"
 import {faCalendar, faClock, faEye, faFaceSmile, faSprayCanSparkles} from "@fortawesome/free-solid-svg-icons"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import { Calendar } from 'react-date-range'
+import 'react-date-range/dist/styles.css'
+import 'react-date-range/dist/theme/default.css'
+import { useState } from "react"
 
 const Header = () => {
+  const [date, setDate] = useState(null)
+
+  console.log(date);
+
   return (
     <div className="header">
       <div className="headerContainer">
@@ -39,6 +47,7 @@ const Header = () => {
           <div className="headerSearchItem">
             <FontAwesomeIcon icon={faCalendar} className="headerIcon" />
             <span className="headerSearchText">Date</span>
+            <Calendar onChange={item => setDate(item)} date={date} />
           </div>
           
           <div className="headerSearchItem">
