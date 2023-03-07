@@ -23,7 +23,9 @@ const Header = () => {
           </div>
         </div>
 
-        <h1 className="headerTitle">Want to get pampered? Come join us!</h1>
+        <h1 className="headerTitle">Want to get pampered? Come visit us!</h1>
+        <p className="headerDesc">Come to us with all your beauty needs, from taking care of your nails, to lashes, or just simply a facial to refresh to skin</p>
+        <button className="headerBtn">Login/Register</button>
       </div>
     </div>
   )
