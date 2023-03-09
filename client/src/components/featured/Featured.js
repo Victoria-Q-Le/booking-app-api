@@ -5,7 +5,7 @@ const Featured = () => {
   return (
     <div className='featured'> 
       <div className='featuredItem'>
-        <img src='https://www.pexels.com/photo/woman-with-black-manicure-holding-white-and-grey-floral-ceramic-cup-851219/' />
+        <img src='../../assets/photos/featured1.png'  alt='featured'/>
       </div>
     </div>
   )
