@@ -10,6 +10,7 @@ const HomePage = () => {
       <Header />
       <div className='homeContainer'>
         <Featured />
+        <h1 className='homeTitle'>Browse by Services</h1>
       </div>
     </div>
   )

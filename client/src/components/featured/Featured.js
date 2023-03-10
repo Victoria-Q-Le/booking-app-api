@@ -18,7 +18,7 @@ const Featured = () => {
       <div className='featuredItem'>
         <img src={Featured2} alt="featured2" className='featuredImg'/>
         <div className='featuredTitles'>
-          <h1>Lash Extension</h1>
+          <h1>Classic Full Set</h1>
           <h1>Desgined by Amy</h1>
         </div>
       </div>
@@ -26,11 +26,11 @@ const Featured = () => {
       <div className='featuredItem'>
         <img src={Featured3} alt="featured3" className='featuredImg'/>
         <div className='featuredTitles'>
-          <h1>Facial Services</h1>
-          <h1>Performed by Our Experienced Aestheticians</h1>
+          <h1>Aqua Peels</h1>
+          <h1>Performed by Amy</h1>
         </div>
       </div>
-      
+
     </div>
   )
 }
