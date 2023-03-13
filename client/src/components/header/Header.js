@@ -66,3 +66,6 @@ const Header = ({type}) => {
 }
 
 export default Header
+
+
+//performing for searching: store the workdays in the table, queries everything table that the day is monday. Does this appear in the blackout date. an availablity table. more ideal for big company. 
