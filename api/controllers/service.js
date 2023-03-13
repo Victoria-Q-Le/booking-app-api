@@ -23,7 +23,7 @@ export const updateService = async (req,res,next) => {
 export const deleteService = async (req,res,next) => {
     try {
         await Service.findByIdAndDelete(req.params.id)
-        res.status(200).json("Service has been deleted!")
+        res.status(200).json("Service has been deleted!")//204, no content 
     } catch (error) {
         next(error)
     }
