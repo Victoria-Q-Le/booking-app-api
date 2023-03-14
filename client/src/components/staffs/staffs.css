@@ -20,3 +20,17 @@
 .staffName {
     font-weight: bold;
 }
+
+.staffServices {
+    font-weight: 500;
+}
+
+
+.booking>button {
+    background-color: #a39193;
+    color: white;
+    border: none;
+    padding: 3px;
+    margin-right: 10px;
+    font-weight: bold;
+}
