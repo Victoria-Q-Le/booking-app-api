@@ -1,0 +1,22 @@
+.staffs {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.staffItem {
+    flex: 1;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.staffImg {
+    width: 100%;
+}
+
+.staffName {
+    font-weight: bold;
+}
