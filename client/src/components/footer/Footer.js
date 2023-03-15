@@ -36,6 +36,8 @@ const Footer = () => {
             <li className="fListItem">Countries</li>
         </ul>
       </div>
+
+      <div className="fText">Coryright © 2023 Victoria</div>
     </div>
   )
 }

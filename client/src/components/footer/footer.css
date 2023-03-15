@@ -6,6 +6,19 @@
 
 .fLists {
     width: 100%;
+    width: 1024px;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.fList {
+    list-style: none;
+    padding: 0;
+}
+
+.fListItem {
+    margin-bottom: 10px;
+    color: #66545e;
+    cursor: pointer;
 }

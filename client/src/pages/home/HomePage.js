@@ -19,8 +19,8 @@ const HomePage = () => {
         <h1 className='homeTitle'>Meet Our Staffs</h1>
         <Staffs />
         <MailList />
+        <Footer />
       </div>
-      <Footer />
     </div>
   )
 }
