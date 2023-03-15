@@ -6,7 +6,6 @@
 
 .fLists {
     width: 100%;
-    width: 1024px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
