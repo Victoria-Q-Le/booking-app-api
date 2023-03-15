@@ -21,7 +21,7 @@ const Footer = () => {
         <ul className="fList">
             <li className="fListItem">Help</li>
             <li className="fListItem">Support</li>
-            <li className="fListItem">Cancel/Rechedule your appoinment</li>
+            <li className="fListItem">Cancel/Rechedule your appointment</li>
         </ul>
       </div>
 
