@@ -10,8 +10,15 @@ const Index = () => {
       <Header type="list"/>
       <div className="listContainer">
         <div className="listWrapper">
-          <div className="listSearch"></div>
-          <div className="listResult"></div>
+          {/* LIST SEARCH */}
+          <div className="listSearch">
+            <h1 className="lsTitle">Search</h1>
+          </div>
+          {/* END OF LIST SEARCH */}
+
+          {/* LIST RESULT */}
+          <div className="listResult">Result</div>
+          {/* END OF LIST RESULT */}
         </div>
       </div>
       <Footer />
