@@ -4,9 +4,17 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import { useState } from "react"
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useNavigate } from "react-router-dom";
 
 const Header = ({type}) => {
   const [date, setDate] = useState(new Date())
+  const [service, setService] = useState("")
+
+  const navigate = useNavigate()
+
+  const handleSearch = () => {
+    navigate("/services", {state: {service, date}})
+  }
 
   return (
     <div className="header">
@@ -40,7 +48,12 @@ const Header = ({type}) => {
           <div className="headerSearch">
             <div className="headerSearchItem">
               <FontAwesomeIcon icon={faSprayCanSparkles} className="headerIcon" />
-              <input type="text" placeholder="Find by service" className="headerSearchInput"></input>
+              <input 
+                type="text" 
+                placeholder="Find by service" 
+                className="headerSearchInput"
+                onChange={e => setService(e.target.value)}
+              />
             </div>
 
             <div className="headerSearchItem">
@@ -55,7 +68,7 @@ const Header = ({type}) => {
             </div>
 
             <div className="headerSearchItem">
-              <button className="headerBtn">Search</button>
+              <button className="headerBtn" onClick={handleSearch}>Search</button>
             </div>
           </div>
         </>}
