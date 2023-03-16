@@ -3,12 +3,16 @@ import Navbar from '../../components/navBar/Navbar'
 import Header from '../../components/header/Header'
 import Footer from "../../components/footer/Footer"
 import { useLocation } from "react-router-dom"
+import { useState } from "react"
+import DatePicker from "react-datepicker"
 
 const Index = () => {
 
   const location = useLocation()
+  const [service, setService] = useState(location.state.service)
+  const [date, setDate] = useState(location.state.date)
 
-  console.log(location);
+  console.log(service, typeof(date))
   return (
     <div>
       <Navbar />
@@ -24,7 +28,9 @@ const Index = () => {
             </div>
             <div className="lsItem">
               <label>Date</label>
-              <input type="text"></input>
+              <span>
+                <DatePicker selected={date} onChange={(date) => setDate(date)}/>
+              </span>
             </div>
           </div>
           {/* END OF LIST SEARCH */}
