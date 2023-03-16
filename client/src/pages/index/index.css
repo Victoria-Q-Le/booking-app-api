@@ -26,6 +26,43 @@
     margin-bottom: 10px;
 }
 
+.lsItem {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.lsItem>label {
+    font-size: 12px;
+    color: white;
+}
+
+.lsItem > input {
+    height: 30px;
+    border: none;
+    padding: 5px;
+}
+
+.lsItem > span {
+    height: 30px;
+    padding: 5px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    cursor: pointer
+}
+
+.listSearch > button {
+    padding: 10px;
+    background-color: #a39193;
+    color: white;
+    border: none;
+    width: 100%;
+    font-weight: 500;
+    cursor: pointer;
+}
+
 .listResult {
     flex: 3;
 }
